@@ -51,7 +51,7 @@ const options = {
     targetDateInMs = selectedDates[0].getTime();
 
     if (timeLeftInMs() < 0) {
-      Notify.failure('Please choose a date in the future');
+      Notify.failure('🧐 Please choose a date in the future');
     } else {
       refs.startBtnEl.disabled = false;
     }
