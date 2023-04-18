@@ -90,7 +90,7 @@ function convertMs(ms) {
 }
 refs.startBtnEl.addEventListener('click', onStartBtnClick);
 function onStartBtnClick() {
-  timerId = setInterval(() => {
+  const timerId = setInterval(() => {
     const timerValueObj = convertMs(timeLeftInMs());
     updateTimerValue(timerValueObj);
     if (timeLeftInMs() < 1000) {
