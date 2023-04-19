@@ -92,13 +92,16 @@ refs.startBtnEl.addEventListener('click', onStartBtnClick);
 function onStartBtnClick() {
   const timerId = setInterval(() => {
     const timerValueObj = convertMs(timeLeftInMs());
+
     updateTimerValue(timerValueObj);
     if (timeLeftInMs() < 1000) {
       refs.inputDateTimePickerEl.disabled = false;
+      updateTimerValue({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       Notify.success('😎 Time is up!');
       clearInterval(timerId);
     }
   }, 1000);
+
   refs.startBtnEl.disabled = true;
   refs.inputDateTimePickerEl.disabled = true;
 }
